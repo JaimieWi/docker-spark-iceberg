@@ -69,6 +69,9 @@ RUN curl https://repo1.maven.org/maven2/software/amazon/awssdk/bundle/${AWSSDK_V
 # Download URL connection client required for S3FileIO
 RUN curl https://repo1.maven.org/maven2/software/amazon/awssdk/url-connection-client/${AWSSDK_VERSION}/url-connection-client-${AWSSDK_VERSION}.jar -Lo /opt/spark/jars/url-connection-client-${AWSSDK_VERSION}.jar
 
+# Download java mssql connector
+RUN curl https://repo1.maven.org/maven2/com/microsoft/sqlserver/mssql-jdbc/12.2.0.jre11/mssql-jdbc-12.2.0.jre11.jar -Lo /opt/spark/jars/mssql-jdbc-12.2.0.jre11.jar
+
 # Install AWS CLI
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
  && unzip awscliv2.zip \
